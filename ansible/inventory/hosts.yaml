@@ -1,0 +1,14 @@
+---
+kubernetes:
+  children:
+    controllers:
+      hosts:
+        "apk3s51":
+          ansible_user: "nprodromou"
+          ansible_host: "10.50.50.51"
+        "apk3s52":
+          ansible_user: "nprodromou"
+          ansible_host: "10.50.50.52"
+        "apk3s52":
+          ansible_user: "nprodromou"
+          ansible_host: "10.50.50.52"
