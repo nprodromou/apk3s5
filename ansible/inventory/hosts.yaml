@@ -9,6 +9,6 @@ kubernetes:
         "apk3s52":
           ansible_user: "nprodromou"
           ansible_host: "10.50.50.52"
-        "apk3s52":
+        "apk3s53":
           ansible_user: "nprodromou"
-          ansible_host: "10.50.50.52"
+          ansible_host: "10.50.50.53"

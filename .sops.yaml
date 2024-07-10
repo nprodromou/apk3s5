@@ -4,8 +4,8 @@ creation_rules:
     encrypted_regex: "^(data|stringData)$"
     key_groups:
       - age:
-          - "age1k7h2z9xf64mlll8lg6gs9ua0qeslu3zu82s5k9my66cc2pnwd9qqkx5trs"
+          - "age1fuxe2g32ufyqyw4s82fxxymcs47wlt7p3h5qm5kg0t5djnqqza2qjzcl4k"
   - path_regex: ansible/.*\.sops\.ya?ml
     key_groups:
       - age:
-          - "age1k7h2z9xf64mlll8lg6gs9ua0qeslu3zu82s5k9my66cc2pnwd9qqkx5trs"
+          - "age1fuxe2g32ufyqyw4s82fxxymcs47wlt7p3h5qm5kg0t5djnqqza2qjzcl4k"
