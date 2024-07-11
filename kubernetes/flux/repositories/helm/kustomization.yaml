@@ -6,7 +6,6 @@ resources:
   - ./bjw-s.yaml
   - ./cilium.yaml
   - ./external-dns.yaml
-  - ./external-secrets.yaml
   - ./ingress-nginx.yaml
   - ./k8s-gateway.yaml
   - ./jetstack.yaml
@@ -15,3 +14,4 @@ resources:
   - ./piraeus.yaml
   - ./rook-ceph.yaml
   - ./stakater.yaml
+  - ./external-secrets.yaml
