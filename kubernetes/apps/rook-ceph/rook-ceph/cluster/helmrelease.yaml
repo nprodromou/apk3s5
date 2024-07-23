@@ -54,12 +54,14 @@ spec:
           requireMsgr2: true
       resources:
         mgr:
+          count: 3
           requests:
             cpu: 100m
             memory: 512Mi
           limits:
             memory: 2Gi
         mon:
+          count: 3
           requests:
             cpu: 50m
             memory: 512Mi
