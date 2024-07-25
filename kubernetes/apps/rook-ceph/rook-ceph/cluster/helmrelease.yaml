@@ -68,6 +68,7 @@ spec:
           limits:
             memory: 1Gi
         osd:
+          count: 3
           requests:
             cpu: 400m
             memory: 2Gi
