@@ -10,7 +10,9 @@ resources:
   - ./k8s-gateway.yaml
   - ./jetstack.yaml
   - ./metrics-server.yaml
+  - ./node-feature-discovery.yaml
   - ./openebs.yaml
+  - ./prometheus-community.yaml
   - ./piraeus.yaml
   - ./rook-ceph.yaml
   - ./stakater.yaml

@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
@@ -38,9 +38,9 @@ spec:
       ingress:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: internal.devbu.io
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         ingressClassName: internal
-        hosts: ["alertmanager.devbu.io"]
+        hosts: ["alertmanager.${SECRET_DOMAIN}"]
         pathType: Prefix
       alertmanagerSpec:
         useExistingSecret: true
@@ -78,9 +78,9 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints: &cp
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 10.50.50.51
+        - 10.50.50.52
+        - 10.50.50.53
     kubeEtcd:
       enabled: true
       endpoints: *cp
@@ -92,11 +92,12 @@ spec:
     prometheus:
       ingress:
         enabled: true
-        annotations:
-          external-dns.alpha.kubernetes.io/target: internal.devbu.io
         ingressClassName: internal
-        hosts: ["prometheus.devbu.io"]
-        pathType: Prefix
+        host:
+          name: &host prometheus.${SECRET_DOMAIN}
+          path: /
+        tls:
+          - hosts: [*host]
       prometheusSpec:
         scrapeInterval: 1m # Must match interval in Grafana Helm chart
         ruleSelectorNilUsesHelmValues: false
