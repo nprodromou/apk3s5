@@ -16,5 +16,5 @@ resources:
   - ./prometheus-community.yaml
   - ./piraeus.yaml
   - ./rook-ceph.yaml
-  - ./stakater.yaml
+  # - ./stakater.yaml
   - ./external-secrets.yaml
