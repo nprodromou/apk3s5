@@ -119,7 +119,7 @@ spec:
           - readOnly: true
       media:
         type: nfs
-        server: "${NAS_ADDR}"
+        server: ${NAS_ADDR}
         path: /Shares/Files
         globalMounts:
           - path: /Files/
