@@ -94,9 +94,9 @@ spec:
     ingress:
       app:
         annotations:
-          external-dns.alpha.kubernetes.io/target: external
+          external-dns.alpha.kubernetes.io/target: internal
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-        className: external
+        className: internal
         hosts:
           - host: plex.${SECRET_DOMAIN}
             paths:
@@ -125,15 +125,15 @@ spec:
         type: emptyDir
       media:
         type: nfs
-        server: expanse.internal
-        path: /eros/Media
+        server: ${NAS_ADDR}
+        path: /Shares/Files/videos
         globalMounts:
-          - path: /media
+          - path: /Files/video
             readOnly: true
       music:
         type: nfs
         server: ${NAS_ADDR}
-        path: /Shares/Files
+        path: /Shares/Files/Mp3s
         globalMounts:
-          - path: /Files
+          - path: /Files/mp3s
             readOnly: true
